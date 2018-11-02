@@ -107,6 +107,17 @@ i {
     -webkit-transform: rotate(45deg);
 }
 
+a{
+    text-decoration: none;
+    color:white;
+}
+a:hover{
+    text-decoration: none;
+    color:white;
+}
+
+
+
 p{
     margin:0;
 }
@@ -118,14 +129,9 @@ h3{
 }
 
 h5{
-    background-color: #ff6666;
+    background-color: #ffcccc;
     padding:5px;
     margin:0;
-}
-
-h5:hover{
-    background-color: #ffcccc;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .row{
@@ -146,7 +152,7 @@ button.plan{
 }
 
 button.plan:hover{
-    margin:0;
-    background-color: #ffcccc;
+    margin-top:1px;
+    background-color: red;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
