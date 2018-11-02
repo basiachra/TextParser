@@ -3,13 +3,65 @@ body{
     font-family: Comfortaa, serif;
 }
 
+h1{
+     padding-top:50px;
+     padding-left: 20px;
+     padding-right: 20px;
+     font-size: 40px;
+     font-style: inherit;
+     font-variant: normal;
+     font-weight: 700;
+     line-height: 55px;
+}
+
+h3{
+    background-color: red;
+    width:100%;
+    padding:8px;
+    margin:0;
+}
+
+h4{
+    margin-top:40px;
+    margin-left:25px;
+}
+
+h5{
+    background-color: #ffcccc;
+    padding:5px;
+    margin:0;
+}
+
+p{
+    margin:0;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+a:hover{
+    text-decoration: none;
+    color:white;
+}
+
+textarea{
+    margin-left:20px;
+}
+
+/*----------------------DIVS----------------------*/
+
+
 div.wrapper{
     margin-left:auto;
     margin-top:15px;
     margin-bottom:20px;
     padding:0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    position:relative;
+}
+
+div.container {
+    background-color: white;
 }
 
 div.header{
@@ -17,13 +69,15 @@ div.header{
     text-align: center;
     background-color: aliceblue ;
 }
-div.container {
-    background-color: white;
 
+div.row{
+    margin-left:4px;
 }
 
-textarea{
-    margin-left:20px;
+div.day{
+    background-color: white;
+    height:auto;
+    margin-top:20px;
 }
 
 div.footer{
@@ -33,27 +87,12 @@ div.footer{
     margin-bottom: 0;
 }
 
-
 p.footer{
     padding: 35px;
 }
 
-h1{
-    padding-top:50px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 40px;
-    font-style: inherit;
-    font-variant: normal;
-    font-weight: 700;
-    line-height: 55px;
-}
 
-h4 {
-    margin-top:40px;
-    margin-left:25px;
-
-}
+/*----------------------BUTTONS----------------------*/
 
 button {
     display: inline-block;
@@ -68,6 +107,7 @@ button {
     cursor: pointer;
     margin: 15px;
 }
+/*-----------------------------------------conversion button-------------------------------*/
 
 button.konwersja span {
     cursor: pointer;
@@ -93,57 +133,7 @@ button.konwersja:hover span:after {
     opacity: 1;
     right: 0;
 }
-/*********************************************PLAN******************************/
-i {
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    margin:0;
-}
-.down{
-    margin:0;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-}
-
-a{
-    text-decoration: none;
-    color:white;
-}
-a:hover{
-    text-decoration: none;
-    color:white;
-}
-
-
-
-p{
-    margin:0;
-}
-h3{
-    background-color: red;
-    width:100%;
-    padding:8px;
-    margin:0;
-}
-
-h5{
-    background-color: #ffcccc;
-    padding:5px;
-    margin:0;
-}
-
-.row{
-    margin-left:4px;
-}
-
-.plan{
-    background-color: white;
-    height:auto;
-    margin-top:20px;
-}
-
+/*------------------------------------------collapse buttons-------------------------------*/
 button.plan{
     background-color: #ff6666;
     width: 80%;
@@ -155,4 +145,17 @@ button.plan:hover{
     margin-top:1px;
     background-color: red;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/******STRZAŁKA********************************************/
+i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin:0;
+}
+.down{
+    margin:0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
