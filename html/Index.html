@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+
+    <script src="../Script/parser.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Comfortaa" />
+
+    <title>Dieta</title>
+</head>
+<body>
+
+<div ng-app="parser" ng-controller="myCtrl" class="container wrapper">
+    <div class="header">
+        <h1>Przekonwertuj swój jadłospis!</h1>
+    </div>
+
+    <div class="box">
+
+        <h4>Tutaj przeklej swój jadłospis:</h4>
+
+        <div class="form-group">
+            <label for="dieta"></label>
+            <textarea ng-model="name" class="form-control" rows="10" id="dieta" style="width:93%;" required></textarea>
+            <button ng-click="show_plan()" type="button" onclick="myFunction()" class="konwersja" ><a href="#"><span>Konwertuj!</span></a></button>
+        </div>
+
+        <script>
+            var app = angular.module('parser', []);
+            app.controller('myCtrl', function($scope) {
+                $scope.showMe = false;
+                $scope.show_plan = function () {
+                    if(!$scope.name.length ==0) {$scope.showMe = true;}
+                    else{$scope.msg ="Pole nie może być puste!";}
+                }
+
+            });
+
+            function myFunction() {
+
+                let tekst = document.getElementById("dieta").value;
+
+
+                let res = x.split(/\r?\n/);
+
+                document.getElementById("pon_sn_n").innerHTML = res[2];
+
+                let i;
+                for (i = 3; i < res.length; i++) {
+                    let x = document.createElement("LI");
+                    let t = document.createTextNode(res[i]);
+                    x.appendChild(t);
+                    document.getElementById("pon_sn_s").appendChild(x);
+                }
+            }
+
+        </script>
+
+    </div>
+
+    <div ng-show="showMe" class="row text-center align-content-center" style="width:99%;">
+        <div class="col-lg-4 col-md-6 day">
+            <h3 class="dzien">Poniedziałek</h3>
+            <h5>Śniadanie</h5>
+            <h6 id="pon_sn_n"></h6>
+            <ul id="pon_sn_s" class="collapse out"></ul>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pon_sn_s"><i class="down"></i></button>
+
+
+            <h5>II Śniadanie</h5>
+            <h6 id="pon_2sn_n"></h6>
+            <ul id="pon_2sn_s" class="collapse out"></ul>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pon_2sn_s"><i class="down"></i></button>
+
+
+            <h5>Obiad</h5>
+            <h6 id="pon_ob_n">wspaniałe ziemiaczki z fasolą na ryżu arborio</h6>
+            <ul id="pon_ob_s" class="collapse out"></ul>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pon_ob_s"><i class="down"></i></button>
+
+
+            <h5>Podwieczorek</h5>
+            <h6 id="pon_pd_n">Chudy jogur z kaszką mleczną</h6>
+            <ul id="pon_pd_s" class="collapse out"></ul>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pon_pd_s"><i class="down"></i></button>
+
+
+            <h5>Kolacja</h5>
+            <h6 id="pon_kol_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <ul id="pon_kol_s" class="collapse out"></ul>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pon_kol_s"><i class="down"></i></button>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 day">
+            <h3 class="dzien">Wtorek</h3>
+            <h5>Śniadanie</h5>
+            <h6 id="wt_sn_n">kanapka z jakimiś rzeczami bardzo zdrowymi of kors</h6>
+            <p id="wt_sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#wt_sn_s"><i class="down"></i></button>
+
+
+            <h5>II Śniadanie</h5>
+            <h6 id="wt_2sn_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="wt_2sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#wt_2sn_s"><i class="down"></i></button>
+
+
+            <h5>Obiad</h5>
+            <h6 id="wt_ob_n">wspaniałe ziemiaczki z fasolą na ryżu arborio</h6>
+            <p id="wt_ob_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#wt_ob_s"><i class="down"></i></button>
+
+
+            <h5>Podwieczorek</h5>
+            <h6 id="wt_pd_n">Chudy jogur z kaszką mleczną</h6>
+            <p id="wt_pd_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#wt_pd_s"><i class="down"></i></button>
+
+
+            <h5>Kolacja</h5>
+            <h6 id="wt_kol_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="wt_kol_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#wt_kol_s"><i class="down"></i></button>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 day">
+            <h3 class="dzien">Środa</h3>
+            <h5>Śniadanie</h5>
+            <h6 id="sr_sn_n">kanapka z jakimiś rzeczami bardzo zdrowymi of kors</h6>
+            <p id="sr_sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sr_sn_s"><i class="down"></i></button>
+
+
+            <h5>II Śniadanie</h5>
+            <h6 id="sr_2sn_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="sr_2sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sr_2sn_s"><i class="down"></i></button>
+
+
+            <h5>Obiad</h5>
+            <h6 id="sr_ob_n">wspaniałe ziemiaczki z fasolą na ryżu arborio</h6>
+            <p id="sr_ob_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sr_ob_s"><i class="down"></i></button>
+
+
+            <h5>Podwieczorek</h5>
+            <h6 id="sr_pd_n">Chudy jogur z kaszką mleczną</h6>
+            <p id="sr_pd_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sr_pd_s"><i class="down"></i></button>
+
+
+            <h5>Kolacja</h5>
+            <h6 id="sr_kol_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="sr_kol_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sr_kol_s"><i class="down"></i></button>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 day">
+            <h3 class="dzien">Czwartek</h3>
+            <h5>Śniadanie</h5>
+            <h6 id="cz_sn_n">kanapka z jakimiś rzeczami bardzo zdrowymi of kors</h6>
+            <p id="cz_sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#cz_sn_s"><i class="down"></i></button>
+
+
+            <h5>II Śniadanie</h5>
+            <h6 id="cz_2sn_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="cz_2sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#cz_2sn_s"><i class="down"></i></button>
+
+
+            <h5>Obiad</h5>
+            <h6 id="cz_ob_n">wspaniałe ziemiaczki z fasolą na ryżu arborio</h6>
+            <p id="cz_ob_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#cz_ob_s"><i class="down"></i></button>
+
+
+            <h5>Podwieczorek</h5>
+            <h6 id="cz_pd_n">Chudy jogur z kaszką mleczną</h6>
+            <p id="cz_pd_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#cz_pd_s"><i class="down"></i></button>
+
+
+            <h5>Kolacja</h5>
+            <h6 id="cz_kol_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="cz_kol_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#cz_kol_s"><i class="down"></i></button>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 day">
+            <h3 class="dzien">Piątek</h3>
+            <h5>Śniadanie</h5>
+            <h6 id="pt_sn_n">kanapka z jakimiś rzeczami bardzo zdrowymi of kors</h6>
+            <p id="pt_sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pt_sn_s"><i class="down"></i></button>
+
+
+            <h5>II Śniadanie</h5>
+            <h6 id="pt_2sn_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="pt_2sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pt_2sn_s"><i class="down"></i></button>
+
+
+            <h5>Obiad</h5>
+            <h6 id="pt_ob_n">wspaniałe ziemiaczki z fasolą na ryżu arborio</h6>
+            <p id="pt_ob_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pt_ob_s"><i class="down"></i></button>
+
+
+            <h5>Podwieczorek</h5>
+            <h6 id="pt_pd_n">Chudy jogur z kaszką mleczną</h6>
+            <p id="pt_pd_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pt_pd_s"><i class="down"></i></button>
+
+
+            <h5>Kolacja</h5>
+            <h6 id="pt_kol_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="pt_kol_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#pt_kol_s"><i class="down"></i></button>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 day">
+            <h3 class="dzien">Sobota</h3>
+            <h5>Śniadanie</h5>
+            <h6 id="sb_sn_n">kanapka z jakimiś rzeczami bardzo zdrowymi of kors</h6>
+            <p id="sb_sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sb_sn_s"><i class="down"></i></button>
+
+
+            <h5>II Śniadanie</h5>
+            <h6 id="sb_2sn_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="sb_2sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sb_2sn_s"><i class="down"></i></button>
+
+
+            <h5>Obiad</h5>
+            <h6 id="sb_ob_n">wspaniałe ziemiaczki z fasolą na ryżu arborio</h6>
+            <p id="sb_ob_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sb_ob_s"><i class="down"></i></button>
+
+
+            <h5>Podwieczorek</h5>
+            <h6 id="sb_pd_n">Chudy jogur z kaszką mleczną</h6>
+            <p id="sb_pd_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sb_pd_s"><i class="down"></i></button>
+
+
+            <h5>Kolacja</h5>
+            <h6 id="sb_kol_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="sb_kol_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#sb_kol_s"><i class="down"></i></button>
+        </div>
+
+        <div class="col-lg-4 col-md-6"></div>
+
+        <div class="col-lg-4 col-md-6 day">
+            <h3 class="dzien">Niedziela</h3>
+            <h5>Śniadanie</h5>
+            <h6 id="nd_sn_n">kanapka z jakimiś rzeczami bardzo zdrowymi of kors</h6>
+            <p id="nd_sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#nd_sn_s"><i class="down"></i></button>
+
+
+            <h5>II Śniadanie</h5>
+            <h6 id="nd_2sn_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="nd_2sn_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#nd_2sn_s"><i class="down"></i></button>
+
+
+            <h5>Obiad</h5>
+            <h6 id="nd_ob_n">wspaniałe ziemiaczki z fasolą na ryżu arborio</h6>
+            <p id="nd_ob_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#nd_ob_s"><i class="down"></i></button>
+
+
+            <h5>Podwieczorek</h5>
+            <h6 id="nd_pd_n">Chudy jogur z kaszką mleczną</h6>
+            <p id="nd_pd_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#nd_pd_s"><i class="down"></i></button>
+
+
+            <h5>Kolacja</h5>
+            <h6 id="nd_kol_n">jakiś dżemik ze zdrowym jabłuszkiem i musli</h6>
+            <p id="nd_kol_s" class="collapse out">Hello</p>
+            <button type="button" class="plan" data-toggle="collapse" data-target="#nd_kol_s"><i class="down"></i></button>
+        </div>
+        <div class="col-lg-4 col-md-6"></div>
+
+
+
+        <div class="col-lg-3 col-md-2"></div>
+        <div class="col-lg-6 col-md-8"><button type="button" class="shopping">Stwórz listę zakupów!</button></div>
+        <div class="col-lg-3 col-md-2 "></div>
+
+    </div>
+
+
+    <!--<p id="demo">Hello</p>
+    <ul id="pon_sn_s"></ul>
+<button onclick="myFunction()">Try it</button>
+    <script>
+        /*function myFunction() {
+            let res = x.split(/\r?\n/);
+
+            document.getElementById("demo").innerHTML = res[2];
+
+            let i;
+            for (i = 3; i < res.length; i++) {
+                let x = document.createElement("LI");
+                let t = document.createTextNode(res[i]);
+                x.appendChild(t);
+                document.getElementById("pon_sn_s").appendChild(x);
+            }
+        }
+
+    </script>-->
+
+
+
+    <div class="footer align-middle">
+        <p class="footer">Made by Basia ... </p>
+    </div>
+</div>
+
+</body>
+</html>
